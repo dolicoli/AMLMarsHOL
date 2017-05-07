@@ -68,6 +68,14 @@ Drag and drop "Select Column In Dataset" module and connect the R output to the 
 On the right panel you click on the Launch Column selector, and click "Exclude" and select X1 column to exclude. 
 This will create a new output that has all the column except X1 column. 
 
+#### Edit Metadata
+
+You may want to drag the "Edit Metadata" and drop it into the dashboard to rename the column name. Choose column selector from the right panel and 
+select to include df.severity, df.id, and X2. 
+
+On new column names field, 
+put id, category, and text.
+
 #### Split Data
 
 Use Split Data features to split data into 2. Use "Rows" as a splitting mode and 0.7 as a fraction to split. 
@@ -75,4 +83,6 @@ We will use 70% of the dataset as training data, and 30% as test data.
 
 
 By end of this mission, your dashboard should look like this
-![alt text](https://ys0i2g-sn3302.files.1drv.com/y4mJFr62yB8cF5xE8ERC5LbLw1nICuulCdx84EQwTim-oZ03LmN39b52HJdn-9AcSKR5sFoOA-7oz5rybpiFCd4bT7BBvG9FVZB0mU20nukK-wlGzHuiqGl7DUDKh21hlfiANF8wP94oW-T_LpjfVm3K4HuzzWyVnM4GLOq8ywGTChm-Oy_xOSFEnJpKyAG1eoy9gqS9nRna7z2YJr06kWP6g?width=660&height=271&cropmode=none "Dashboard")
+
+
+![alt text](https://ys0g2g-sn3302.files.1drv.com/y4m6K8b7y7jIaXrNeRMoDfvlARaeXH2k94HT2OXRty_9Tipk1hmLVznGVZrbuCBXg3gxGAQu4aZ53tY5OBDxo1ojQ-Nd_qI5Vvh6Tx4EJolVxhuoejqqQfW1B4Edu7ZEIjBmUf_rfBshaM97eI_NePiS09eE3wRoYRBYE9c_8ok9nc3Cuk_U4qtli5fFLPatqJzJaXMPgVmqvZV4ktOudvB0w?width=704&height=608&cropmode=none "Dashboard")
