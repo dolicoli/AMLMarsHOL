@@ -6,16 +6,20 @@ You and your crew on Mars are dependents on how well your spacecraft is. Your ta
 
 ### Mission Objective
 
-You will need to deploy Azure Machine Learning solution that trained to identify the severity level of upcoming logs. Your system must be able to extract the input and predict + identify the severity level. If the logs identified as high level severity, you will need to save it into Database given by the command center for them to advice on potential solutions. 
+You will need to deploy Azure Machine Learning solution that trained to identify the severity level of upcoming logs. Your system must be able to extract the input and predict + identify the severity level. If the logs identified as high level severity, you will need inform the command center for them to advice on potential solutions. 
+
+This Mission will introduce you to a simple R data cleansing and classification algorithm.
 
 ## Mission Walktrough
 
-Your Machine learning solution should be able to train the system and categorize the severity of Low or High. 
+Your Machine learning solution should be able to train the system and categorize the severity from 1 to 6
 
-Mission 1 : You will need to preprocess the input before training them as the logs is not as clean as you expect by using R language and following the format given. 
+Mission 1 : You will need to preprocess the input before training them as the logs is not as clean as you expect by using R language / Module and following the format given. 
 
-Mission 2 : You will to train the data and experimenting with different algorithm provided by Azure Machine Learning and find the most effective prediction. 
+Mission 2 : You will to train the data and come out with the prediction, publish the project as webservice. 
 
-Challenge : Create a simple site where your crew can input the unknown entry, classify them, and if the severity is high, save them into database. 
+Challenge : Experiment using different classification algorithm to find a better accuracy.
 
-Good luck and have fun!
+##Contributions
+
+Feel free to fork this repository for your own use, or make a pull request and contribute to this repository if you have any suggestions.
