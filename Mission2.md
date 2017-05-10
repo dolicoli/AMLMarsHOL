@@ -15,20 +15,21 @@ In this mission, we will use feature hashing and multiclass model to train our d
 
 #### Feature Engineering
 
+The Feature Hashing module can be used to convert variable-length text documents to equal-length numeric feature vectors, using the 32-bit murmurhash v3 hashing method provided by the Vowpal Wabbit library. The objective of using feature hashing is dimensionality reduction; also feature hashing makes the lookup of feature weights faster at classification time, because it uses hash value comparison instead of string comparison.
 
-We used the Feature Hashing module to convert the plain text of the articles to integers and used the integer values as input features to the model. In order to do this, we need to select column text on the feature hashing.
+In a nutshell, we used the Feature Hashing module to convert the plain text of the articles to integers and used the integer values as input features to the model. In order to do this, we need to select column text on the feature hashing.
 
 ### Select Column in Dataset
 
-We need to remove the id column and text by selecting launch column selector. 
+We need to remove text_column by selecting launch column selector. we are doing this because the hashing feature already convert all the texts into computable integers, hence we do not need the original text anymore.  
 
 ### Training Data
 
-We will use multiclass decision forest to train the data. 
+We will use multiclass decision forest to train the data, as the main objective of this mission is to classify the text to severity category. AzureML provides few classification algorithm that you can choose to execute the objective. 
 
 What you need to do is to drag multiclass decision forest from the left panel and also train model. 
 
-From multiclass you connct it to left input of train model and connect the training data with hashing to right input. 
+From multiclass you connect it to left input of train model and connect the training data with hashing to right input. 
 
 
 ### Verifying model

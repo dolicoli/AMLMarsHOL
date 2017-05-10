@@ -19,6 +19,10 @@ The type should be Generic CSV File with a header.
 
 After Uploading the data, we can start using the studio. 
 
+The overall workflow for this project is explained below : 
+
+![alt text](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/02/52/TCT1.png "Dashboard")
+
 ### Adding new Experiments
 
 You can create new expriment by clicking New -> Experiment tab -> Blank Experiment
@@ -76,6 +80,76 @@ select to include df.severity, df.id, and X2.
 On new column names field, 
 put id, category, and text.
 
+
+#### Clean Stop Words
+The next thing we need to is to clean the text to make sure that all the stop words are removed. If you notice the data that we have, there are numbers on the text as well. We need to exclude it from the training data using this text preprocessing. We will use a public available stop words from Microsoft as an input that connected to a text preprocessing package. Use Import Data module, select Data Source to get it from "Web URL via HTTP"
+and url from : http://azuremlsamples.azureml.net/templatedata/Text - Sentiment Stopwords.tsv
+and change the data format to TSV.
+
+
+#### Uploading Preprocessing Text Package. 
+Inside the preprocess folder, there are .zip package that contained an .R file which will do the preprocessing for you. 
+Click New -> Module -> Upload File. 
+
+#### Execute R script
+This R Script will then combine the input data (input data 1 from the train data, input data 2 from the stop words, and input 3 from the preprocess text)
+
+Execute the script below : 
+```
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Please determine the required text preprocessing steps using the following flag 
+replace_special_chars <- TRUE
+remove_duplicate_chars <- TRUE
+replace_numbers <- TRUE
+convert_to_lower_case <- TRUE
+remove_default_stopWords <- FALSE
+remove_given_stopWords <- TRUE
+stem_words <- TRUE
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+# Map 1-based optional input ports to variables
+dataset1 <- maml.mapInputPort(1) # class: data.frame
+# get the label and text columns from the input data set
+text_column <- dataset1[["text"]]
+label_column <- dataset1[["category"]]
+
+stopword_list <- NULL
+result <- tryCatch({
+   dataset2 <- maml.mapInputPort(2) # class: data.frame
+   # get the stopword list from the second input data set
+   stopword_list <- dataset2[[1]]
+}, warning = function(war) {
+   # warning handler 
+   print(paste("WARNING: ", war))
+}, error = function(err) {
+   # error handler
+   print(paste("ERROR: ", err))
+   stopword_list <- NULL
+}, finally = {})
+ 
+# Load the R script from the Zip port in ./src/
+source("src/text.preprocessing.R");
+                            
+text_column <- preprocessText(text_column, 
+                         replace_special_chars,
+                         remove_duplicate_chars,
+                         replace_numbers,
+                         convert_to_lower_case,
+                         remove_default_stopWords,
+                         remove_given_stopWords,
+                         stem_words, 
+                         stopword_list)                   
+
+data.set <- data.frame(
+                label_column,
+                text_column,
+                stringsAsFactors = FALSE 
+                )    
+
+# Select data.frame to be sent to the output Dataset port
+maml.mapOutputPort("data.set")
+```
+
 #### Split Data
 
 Use Split Data features to split data into 2. Use "Rows" as a splitting mode and 0.7 as a fraction to split. 
@@ -85,4 +159,4 @@ We will use 70% of the dataset as training data, and 30% as test data.
 By end of this mission, your dashboard should look like this
 
 
-![alt text](https://ys0g2g-sn3302.files.1drv.com/y4m6K8b7y7jIaXrNeRMoDfvlARaeXH2k94HT2OXRty_9Tipk1hmLVznGVZrbuCBXg3gxGAQu4aZ53tY5OBDxo1ojQ-Nd_qI5Vvh6Tx4EJolVxhuoejqqQfW1B4Edu7ZEIjBmUf_rfBshaM97eI_NePiS09eE3wRoYRBYE9c_8ok9nc3Cuk_U4qtli5fFLPatqJzJaXMPgVmqvZV4ktOudvB0w?width=704&height=608&cropmode=none "Dashboard")
+![alt text](https://88qslg-sn3302.files.1drv.com/y4mS8Tp2W1X1c1RwWdYzoP89nj1Et2HsQHodfir5_EbqYSbpSVq6xd5KfCpsSr9bRX6xZuekgWAgJN6dv03h58pHUlWmOqMjGsBw2lS-wTy1kR-PH4SwWfpfVTwg4R8smyS8qoaalc7eaQmdObVrnDXEybQlCwDiAVm22tSgeVaF3I4tkLy59UTP74N7cAPZuWmLH18cODnXvh_Ht06rnEdww?width=1343&height=834&cropmode=none "Dashboard")

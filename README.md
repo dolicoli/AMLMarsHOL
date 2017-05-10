@@ -14,11 +14,11 @@ This Mission will introduce you to a simple R data cleansing and classification 
 
 Your Machine learning solution should be able to train the system and categorize the severity from 1 to 6
 
-Mission 1 : You will need to preprocess the input before training them as the logs is not as clean as you expect by using R language / Module and following the format given. 
+[Mission 1](https://github.com/dolicoli/AMLMarsHOL/blob/master/Mission1.md) : You will need to preprocess the input before training them as the logs is not as clean as you expect by using R language / Module and following the format given. 
 
-Mission 2 : You will to train the data and come out with the prediction 
+[Mission 2](https://github.com/dolicoli/AMLMarsHOL/blob/master/Mission2.md) : You will to train the data and come out with the prediction 
 
-Challenge : Experiment using different classification algorithm to find a better accuracy and publish the project as webservice.
+[Challenge](https://github.com/dolicoli/AMLMarsHOL/blob/master/Challenge.md) : Experiment using different classification algorithm to find a better accuracy and publish the project as webservice.
 
 ##Contributions
 
