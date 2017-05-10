@@ -21,7 +21,7 @@ After Uploading the data, we can start using the studio.
 
 The overall workflow for this project is explained below : 
 
-![alt text](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/02/52/TCT1.png "Dashboard")
+![alt text](https://88qrlg-sn3302.files.1drv.com/y4myorUNM2d55gFcl_1LO5BxBin1yDQMjW6DGx5dQmNQwbcorR6YJnqlR-oMG_GPHjNqE89hUcjq2E8zPRSwZzLZ5edNN0PYCDoz74BVlQU0Taz4pIfC7lg2s1PHN_WpgqINw-aVvpzHSIPPoSdfWL3wx3QoS5lQgWqcEyYsA5HvGJl4LY7z-9BpGkJSoAUnyCl-dHThG1FLYNnUgTiv_tc1g?width=1041&height=177&cropmode=none "Dashboard")
 
 ### Adding new Experiments
 
