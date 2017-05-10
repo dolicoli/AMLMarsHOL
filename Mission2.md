@@ -41,7 +41,7 @@ Drag and drop Score model from left panel and connect the training model result 
 
 Drag and drop Evalute model from left panel and connect the result for Score model as input in Evalute model. Evaluating the model will give you the accuracy level of the traning model. You will see the value is around 90%. Don't panic. The reason why it is almost perfect is because i am using console program to generate the training data. In real life, it will be varied depend on your test data. You will see the percentage of how each of the text is being categorized to their respective severity level. 
 
-![alt text] (https://88qxlg-sn3302.files.1drv.com/y4me0smi1xuiIbgcWtmGVmm1ill1lnprG4DbqBVlCO1mgH6ssAgpbnzzMXQnm191VQ5FXEGw6thLeXiwadcW9of3tG-etXizZKDaWHObKBIeER9AwxCVQAD0e0CLIj9rlUhFEztGMEDa5N3HbuXRQiF7uWl2QuNd_IIhlvPSKEreDN6cPVo3oWI4h7ukuWwSU9PE1vrcrKDScBkxSV52ZKhXQ?width=991&height=929&cropmode=none "Dashboard")
+![alt text](https://88qxlg-sn3302.files.1drv.com/y4me0smi1xuiIbgcWtmGVmm1ill1lnprG4DbqBVlCO1mgH6ssAgpbnzzMXQnm191VQ5FXEGw6thLeXiwadcW9of3tG-etXizZKDaWHObKBIeER9AwxCVQAD0e0CLIj9rlUhFEztGMEDa5N3HbuXRQiF7uWl2QuNd_IIhlvPSKEreDN6cPVo3oWI4h7ukuWwSU9PE1vrcrKDScBkxSV52ZKhXQ?width=991&height=929&cropmode=none "Dashboard")
 
 ### Run Experiment
  
