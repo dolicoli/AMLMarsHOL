@@ -89,10 +89,13 @@ and change the data format to TSV.
 
 #### Uploading Preprocessing Text Package. 
 Inside the preprocess folder, there are .zip package that contained an .R file which will do the preprocessing for you. 
-Click New -> Module -> Upload File. 
+Click New -> Dataset -> Upload File. 
 
 #### Execute R script
-This R Script will then combine the input data (input data 1 from the train data, input data 2 from the stop words, and input 3 from the preprocess text)
+Drag and drop the text.preprocessing.zip from "My Dataset" to the dashboard.After that combine the input data (input data 1 from the train data, input data 2 from the stop words, and input 3 from the preprocess text). Like the image below :
+
+![alt text](https://789rig-sn3302.files.1drv.com/y4mZh9izpgdc--6lhIHrt54w5QbtRUwR8wfbotV8ls2XH6EupaZRSHquxyVSqhP7MQ4j9aK93VeUP_wluhCbHyLMQl8opvpFsuExBFTydK3OjqY9ztKd6Tzq7AteyUEHr5HqZSW5IICwK4UIJDSJHybn2kmzoorJaN_Y112lx7mK4PZxmYdyeZap1_z3Bdx_Z5t_szQoIhllYWCIwsh_qoxPQ?width=917&height=319&cropmode=none "Dashboard")
+
 
 Execute the script below : 
 ```
